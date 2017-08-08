@@ -342,7 +342,7 @@ curl -X POST \
               |         |            |            |
             
 <aside class="success">status:200 OK</aside>
-<aside class="warning">status:401 Unauthorized.</aside>
+<aside class="warning">status:422 Unprocessable entry.</aside>
 
 
 ## Like User
