@@ -19,7 +19,7 @@ curl -X GET \
 ```json
 
  {
- 	"user ": [{
+ 	"users ": [{
  			"user_id": "5",
  			"name": "vikram",
  			"dob": "17/07/1984",
@@ -78,8 +78,8 @@ curl -X GET \
 ```json
 
   {
-    	"user ": [{
-    			"user_id": "4",
+    	"users ": [{
+    			"id": "4",
     			"name": "Ram",
                "dob": "17/07/1984",
                "about_us": "Text msg",
@@ -89,7 +89,7 @@ curl -X GET \
                "dateing": "women"
            	},
     		{
-    			"user_id": "9",
+    			"id": "9",
     			"name": "Gyan",
                "dob": "17/07/1984",
                "about_us": "Text msg",
@@ -123,7 +123,7 @@ This API is used for the follow the user.
 
 ```shell
 curl -X POST \
-  http://base_url/user/:id/follow \
+  http://base_url/users/:id/follow \
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
@@ -142,7 +142,7 @@ curl -X POST \
 
 ### HTTP Request
 
-`POST  http://base_url/user/:id/follow`
+`POST  http://base_url/users/:id/follow`
 
 ### Parameters
 
@@ -160,7 +160,7 @@ This API is used for the un follow the user.
 
 ```shell
 curl -X POST \
-  http://base_url/user/:id/unfollow\
+  http://base_url/users/:id/unfollow\
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
@@ -179,7 +179,7 @@ curl -X POST \
 
 ### HTTP Request
 
-`POST http://base_url/user/:id/unfollow`
+`POST http://base_url/users/:id/unfollow`
 
 
 ### Parameters
@@ -198,7 +198,7 @@ This API is used the block the user.
 
 ```shell
 curl -X POST \
-  http://post/%20http:/base_url/user/:id/block\
+  http://post/%20http:/base_url/users/:id/block\
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
@@ -217,7 +217,7 @@ curl -X POST \
 
 ### HTTP Request
 
-`POST http:/base_url/user/:id/block`
+`POST http:/base_url/users/:id/block`
 
 
 ### Parameters
@@ -236,7 +236,7 @@ This API is used for the unblock the user.
 
 ```shell
 curl -X POST \
-  http://post/%20http:/base_url/user//unblock/ \
+  http://post/%20http:/base_url/users/:id/unblock/ \
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
@@ -255,7 +255,7 @@ curl -X POST \
 
 ### HTTP Request
 
-`POST http://base_url/user/:id/unblock`
+`POST http://base_url/users/:id/unblock`
 
 
 ### Parameters
@@ -273,7 +273,7 @@ This API is used for the report the user.
 
 ```shell
 curl -X POST \
-  http://base_url/user//report \
+  http://base_url/users/:id/report \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
@@ -293,7 +293,7 @@ curl -X POST \
 
 ### HTTP Request
 
-`POST http://base_url/user/:id/report`
+`POST http://base_url/users/:id/report`
 
 
 ### Parameters
@@ -311,8 +311,8 @@ curl -X POST \
 This API is used for the user notification. 
 
 ```shell
-curl -X POST \
-  http://base_url/user/notification \
+curl -X GET \
+  http://base_url/users/:id/notification \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
@@ -332,7 +332,7 @@ curl -X POST \
 
 ### HTTP Request
 
-`GET http://base_url/user/notification`
+`GET http://base_url/users/:id/notification`
 
 
 ### Parameters
@@ -351,7 +351,7 @@ This API is used for the like the user.
 
 ```shell
 curl -X POST \
-  http://base_url/user/:id/like \
+  http://base_url/users/:id/like \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
@@ -371,7 +371,7 @@ curl -X POST \
 
 ### HTTP Request
 
-`POST http://base_url/user/:id/like`
+`POST http://base_url/users/:id/like`
 
 
 ### Parameters
@@ -390,7 +390,7 @@ This API is used for unlike the user.
 
 ```shell
 curl -X POST \
-  http://base_url/user/:id/unlike \
+  http://base_url/users/:id/unlike \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
@@ -410,7 +410,7 @@ curl -X POST \
 
 ### HTTP Request
 :
-`POST http://base_url/user/:id/unlike`
+`POST http://base_url/users/:id/unlike`
 
 
 ### Parameters
