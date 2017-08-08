@@ -198,7 +198,7 @@ This API is used the block the user.
 
 ```shell
 curl -X POST \
-  http://post/%20http:/base_url/users/:id/block\
+   http:/base_url/users/:id/block\
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
@@ -236,7 +236,7 @@ This API is used for the unblock the user.
 
 ```shell
 curl -X POST \
-  http://post/%20http:/base_url/users/:id/unblock/ \
+   http:/base_url/users/:id/unblock\
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
@@ -312,7 +312,7 @@ This API is used for the user notification.
 
 ```shell
 curl -X POST \
-  http://base_url/users/:id/notification \
+  http://base_url/users/:id/notification\
   -H 'accept: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
