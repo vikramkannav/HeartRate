@@ -1,5 +1,6 @@
 # Categories
 
+This API is used for the list of Activity categories.
 
 ## Activities
 
@@ -7,7 +8,7 @@
 curl -X GET \
   http://base_url/activities \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
 ```
@@ -48,11 +49,14 @@ curl -X GET \
 
 ## Habits
 
+This API is used for the list of habit categories.
+
+
 ```shell
 curl -X GET \
   http://base_url/habits \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
 ```

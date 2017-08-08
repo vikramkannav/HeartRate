@@ -242,7 +242,7 @@ curl -X POST \
 
     Parameter | Type | Description| Required | Default
     --------- | ------- | -----------| -----------| -----------
-    facebook |boolen  |facebook of the user | true |
+    facebook |boolean  |facebook of the user | true |
     token    |  string    | token of the user | true 
     
 <aside class="success">status:200 OK</aside>
@@ -255,26 +255,33 @@ This API is used for the regenerating the auth token via refresh token. This API
 
 ```shell
 curl -X POST \
-  http://base_url/users/sign_up \
+  http://base_url/api/refresh_token \
   -H 'accept: application/json' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-    -d ' {
- 	"user ": {
- 	   "facebook" : "true",
- 	   "facebook_tooken": "facebook_tooken"
- 	}
- }'
-
+ -d '{
+    "refresh_token": "iYa1WQuk5_f9Fd04D_Qrrw"
+}'
 ```
 
 
 > The above command returns JSON structured like this:
 
 ```json
- {
-   "message" : "user login succfully" 
- }
+  {
+    "user": {
+                "name": "vikram",
+          		"dob": "17/07/1984",
+          		"about_us": "Text msg",
+          		"gender": "Male",
+          		"occupation": "IT",
+          		"age_range": "20-30",
+          		"dateing": "women"
+
+    },
+    "refresh_token": "absgdtydiid123" ,
+    "auth_token":"DDEJKRAS2356"
+   }
 
 ```
 

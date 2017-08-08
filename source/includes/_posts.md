@@ -8,7 +8,7 @@ This is API is used for the user posts.
 curl -X GET \
   http://base_url/posts \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
 ```

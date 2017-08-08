@@ -2,11 +2,13 @@
 
 ## Followers
 
+This API is used for show the followers.
+
 ```shell
 curl -X GET \
   http://base_url/followers \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
  ```
@@ -59,11 +61,13 @@ curl -X GET \
 
 ## Following
 
+This API is used for show the following.
+
 ```shell
 curl -X GET \
   http://base_url/following \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
  ```
@@ -82,7 +86,7 @@ curl -X GET \
                "gender": "Male",
                "occupation": "IT",
                "age_range": "20-30",
-               "dateing": "women",
+               "dateing": "women"
            	},
     		{
     			"user_id": "9",
@@ -115,11 +119,13 @@ curl -X GET \
 
 ##Follow
 
+This API is used for the follow the user.
+
 ```shell
 curl -X POST \
   http://base_url/user/:id/follow \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
 
@@ -150,11 +156,13 @@ curl -X POST \
 
 ##Un Follow
 
+This API is used for the un follow the user.
+
 ```shell
 curl -X POST \
-  http://base_url/follow/ \
+  http://base_url/user/:id/unfollow\
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
  ```
@@ -164,7 +172,7 @@ curl -X POST \
 
 ```json
   {
-  	"message" : "user follow successfully " 
+  	"message" : "user un follow successfully " 
   }
 ```
 
@@ -186,11 +194,13 @@ curl -X POST \
             
 ##Block User
 
+This API is used the block the user.
+
 ```shell
 curl -X POST \
-  http://post/%20http:/base_url/user//block \
+  http://post/%20http:/base_url/user/:id/block\
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
  ```
@@ -222,11 +232,13 @@ curl -X POST \
             
 ##User Unblock
 
+This API is used for the unblock the user.
+
 ```shell
 curl -X POST \
   http://post/%20http:/base_url/user//unblock/ \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
  ```
@@ -257,12 +269,14 @@ curl -X POST \
 
 ##Report User
 
+This API is used for the report the user.
+
 ```shell
 curl -X POST \
   http://base_url/user//report \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
  ```
@@ -272,7 +286,7 @@ curl -X POST \
 
 ```json
   {
-  	"message" : "user unblock successfully " 
+  	"message" : "user report successfully " 
   }
 ```
 
@@ -294,12 +308,14 @@ curl -X POST \
 
 ## Notification
 
+This API is used for the user notification. 
+
 ```shell
 curl -X POST \
   http://base_url/user/notification \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
  ```
@@ -331,12 +347,14 @@ curl -X POST \
 
 ## Like User
 
+This API is used for the like the user.
+
 ```shell
 curl -X POST \
   http://base_url/user/:id/like \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
  ```
@@ -346,7 +364,7 @@ curl -X POST \
 
 ```json
   {
-  	"message" : "User notification get successfully" 
+  	"message" : "User like successfully" 
   }
 ```
 
@@ -368,12 +386,14 @@ curl -X POST \
 
 ## Unlike User
 
+This API is used for unlike the user.
+
 ```shell
 curl -X POST \
   http://base_url/user/:id/unlike \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
-  -H 'authorization: Token token:AABB1234' \
+  -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
  ```
@@ -383,7 +403,7 @@ curl -X POST \
 
 ```json
   {
-  	"message" : "User notification get successfully" 
+  	"message" : "User unlike successfully" 
   }
 ```
 
