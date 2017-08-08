@@ -310,16 +310,18 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the documentation for the Heart Beat API!</p>
 
-<p>HeartRate app is a platform on which user can see the the post of people those follow.
+<p>HeartRate app is a platform on which user can see the the post of people those follow. 
 This document is defined the behaviour of the HeartRate application.</p>
 
-<p>A user can get the system by provied his/her mobile number with number OTP Or Face book application.</p>
+<p>A user can get the system by provied his/her email id Or Face book application.</p>
 
 <p>A user can follow and unfollow of other user.</p>
 
 <p>A user can visit other user profile.</p>
 
 <p>A user get notification if user post those he follow.</p>
+
+<p>A user can like like or unlike.</p>
 <h1 id='authentication'>Authentication</h1><h2 id='sign-up'>Sign Up</h2>
 <p>This API is used for the sign up with email user name,email id
 with password.</p>
@@ -754,7 +756,7 @@ with password.</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">
  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"user "</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"users "</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
             </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vikram"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17/07/1984"</span><span class="p">,</span><span class="w">
@@ -821,8 +823,8 @@ with password.</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">
   </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"user "</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-                </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"users "</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ram"</span><span class="p">,</span><span class="w">
                </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17/07/1984"</span><span class="p">,</span><span class="w">
                </span><span class="s2">"about_us"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text msg"</span><span class="p">,</span><span class="w">
@@ -832,7 +834,7 @@ with password.</p>
                </span><span class="s2">"dateing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"women"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gyan"</span><span class="p">,</span><span class="w">
                </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17/07/1984"</span><span class="p">,</span><span class="w">
                </span><span class="s2">"about_us"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text msg"</span><span class="p">,</span><span class="w">
@@ -877,7 +879,7 @@ with password.</p>
 <h2 id='follow'>Follow</h2>
 <p>This API is used for the follow the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/user/:id/follow <span class="se">\</span>
+  http://base_url/users/:id/follow <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -891,7 +893,7 @@ with password.</p>
     </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user follow successfully "</span><span class="w"> 
  </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST  http://base_url/user/:id/follow</code></p>
+<p><code>POST  http://base_url/users/:id/follow</code></p>
 <h3 id='parameters-3'>Parameters</h3>
 <table><thead>
 <tr>
@@ -924,7 +926,7 @@ with password.</p>
 <h2 id='un-follow'>Un Follow</h2>
 <p>This API is used for the un follow the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/user/:id/unfollow<span class="se">\</span>
+  http://base_url/users/:id/unfollow<span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -937,7 +939,7 @@ with password.</p>
     </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user un follow successfully "</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST http://base_url/user/:id/unfollow</code></p>
+<p><code>POST http://base_url/users/:id/unfollow</code></p>
 <h3 id='parameters-4'>Parameters</h3>
 <table><thead>
 <tr>
@@ -964,7 +966,7 @@ with password.</p>
 <h2 id='block-user'>Block User</h2>
 <p>This API is used the block the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://post/%20http:/base_url/user/:id/block<span class="se">\</span>
+  http://post/%20http:/base_url/users/:id/block<span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -977,7 +979,7 @@ with password.</p>
     </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user block successfully "</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST http:/base_url/user/:id/block</code></p>
+<p><code>POST http:/base_url/users/:id/block</code></p>
 <h3 id='parameters-5'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1003,7 +1005,7 @@ with password.</p>
 <h2 id='user-unblock'>User Unblock</h2>
 <p>This API is used for the unblock the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://post/%20http:/base_url/user//unblock/ <span class="se">\</span>
+  http://post/%20http:/base_url/users/:id/unblock/ <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -1016,7 +1018,7 @@ with password.</p>
     </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user unblock successfully "</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST http://base_url/user/:id/unblock</code></p>
+<p><code>POST http://base_url/users/:id/unblock</code></p>
 <h3 id='parameters-6'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1042,7 +1044,7 @@ with password.</p>
 <h2 id='report-user'>Report User</h2>
 <p>This API is used for the report the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/user//report <span class="se">\</span>
+  http://base_url/users/:id/report <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
@@ -1056,7 +1058,7 @@ with password.</p>
     </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user report successfully "</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST http://base_url/user/:id/report</code></p>
+<p><code>POST http://base_url/users/:id/report</code></p>
 <h3 id='parameters-7'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1081,8 +1083,8 @@ with password.</p>
 <aside class="warning">status:422 Unprocessable entry.</aside>
 <h2 id='notification'>Notification</h2>
 <p>This API is used for the user notification. </p>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/user/notification <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  http://base_url/users/:id/notification <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
@@ -1096,7 +1098,7 @@ with password.</p>
     </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"User notification get successfully"</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET http://base_url/user/notification</code></p>
+<p><code>GET http://base_url/users/:id/notification</code></p>
 <h3 id='parameters-8'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1122,7 +1124,7 @@ with password.</p>
 <h2 id='like-user'>Like User</h2>
 <p>This API is used for the like the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/user/:id/like <span class="se">\</span>
+  http://base_url/users/:id/like <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
@@ -1136,7 +1138,7 @@ with password.</p>
     </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"User like successfully"</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
-<p><code>POST http://base_url/user/:id/like</code></p>
+<p><code>POST http://base_url/users/:id/like</code></p>
 <h3 id='parameters-9'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1162,7 +1164,7 @@ with password.</p>
 <h2 id='unlike-user'>Unlike User</h2>
 <p>This API is used for unlike the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/user/:id/unlike <span class="se">\</span>
+  http://base_url/users/:id/unlike <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
@@ -1177,7 +1179,7 @@ with password.</p>
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
 <p>:
-<code>POST http://base_url/user/:id/unlike</code></p>
+<code>POST http://base_url/users/:id/unlike</code></p>
 <h3 id='parameters-10'>Parameters</h3>
 <table><thead>
 <tr>
