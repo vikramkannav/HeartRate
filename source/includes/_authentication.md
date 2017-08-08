@@ -29,7 +29,8 @@ curl -X POST \
 ```json
  {
  	"user ": {
- 		"name": "",
+ 		"name": "vikram",
+ 		"email":"vikramkanav@gmail.com"
  		"dob": "",
  		"about_us": "",
  		"gender": "",
