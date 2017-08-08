@@ -74,7 +74,7 @@ This API is used for the user update profile.
  
 
 ```shell
-curl -X POST \
+curl -X PUT \
   http://base_url/users \
   -H 'accept: application/json' \
   -H 'authorization: Token token:AABB1234' \

@@ -19,12 +19,12 @@ curl -X GET \
 ```json
  {
  	"posts ": [{
- 			"post_id": "3",
- 			"post_decription": "post_decription"
+ 			"id": "3",
+ 			"decription": "post_decription"
  		},
  		{
- 			"post_id": "6",
- 			"post_decription": "post_decription"
+ 			"id": "6",
+ 			"decription": "post_decription"
  		}
  	]
  }

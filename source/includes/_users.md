@@ -311,7 +311,7 @@ curl -X POST \
 This API is used for the user notification. 
 
 ```shell
-curl -X GET \
+curl -X POST \
   http://base_url/users/:id/notification \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
@@ -332,7 +332,7 @@ curl -X GET \
 
 ### HTTP Request
 
-`GET http://base_url/users/:id/notification`
+`POST http://base_url/users/:id/notification`
 
 
 ### Parameters
