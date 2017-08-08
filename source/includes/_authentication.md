@@ -36,10 +36,10 @@ curl -X POST \
  		"gender": "",
  		"occupation": "",
  		"age_range": "",
-	 	"refresh_token": "iYa1WQuk5_f9Fd04D_Qrrw",
- 		"dateing": ""
+	 	"dateing": ""
  	},
- 	"auth_token": "AABB1234",
+ 	"refresh_token": "iYa1WQuk5_f9Fd04D_Qrrw",
+   	"auth_token": "AABB1234",
  }
 ```
 
@@ -107,9 +107,9 @@ curl -X PUT \
      		"occupation": "IT",
      		"age_range": "20-30",
      		"date_with": "women",
-         	"refresh_token": "iYa1WQuk5_f9Fd04D_Qrrw"
      	},
-         	"auth_token": "AABB1234"
+          "refresh_token": "iYa1WQuk5_f9Fd04D_Qrrw"
+          "auth_token": "AABB1234"
  }
 ```
 >The above command returns JSON structured like this for failure:
@@ -172,10 +172,10 @@ curl -X POST \
      		"gender": "Male",
      		"occupation": "IT",
      		"age_range": "20-30",
-     		"dateing": "women",
-     		"refresh_token": "iYa1WQuk5_f9Fd04D_Qrrw"
-     	},
-         	"auth_token": "AABB1234"
+     		"dateing": "women"
+     		  	},
+         	"refresh_token": "iYa1WQuk5_f9Fd04D_Qrrw"
+            "auth_token": "AABB1234"
          	
  }
 ```
