@@ -616,7 +616,7 @@ with password.</p>
 </thead><tbody>
 <tr>
 <td>facebook</td>
-<td>boolen</td>
+<td>boolean</td>
 <td>facebook of the user</td>
 <td>true</td>
 <td></td>
@@ -636,24 +636,31 @@ with password.</p>
 <h2 id='retrieve-access-token'>Retrieve access Token</h2>
 <p>This API is used for the regenerating the auth token via refresh token. This API is an authentication API request in which needs to pass auth token in the request header.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/users/sign_up <span class="se">\</span>
+  http://base_url/api/refresh_token <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-    -d <span class="s1">' {
-    "user ": {
-       "facebook" : "true",
-       "facebook_tooken": "facebook_tooken"
-    }
- }'</span>
-
+ -d <span class="s1">'{
+    "refresh_token": "iYa1WQuk5_f9Fd04D_Qrrw"
+}'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
-   </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user login succfully"</span><span class="w"> 
- </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vikram"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17/07/1984"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"about_us"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text msg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IT"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"age_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-30"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"dateing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"women"</span><span class="w">
+
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"absgdtydiid123"</span><span class="w"> </span><span class="p">,</span><span class="w">
+    </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="s2">"DDEJKRAS2356"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
 
 </span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST http://base_url.com/api/refresh_token</code></p>
@@ -684,7 +691,7 @@ with password.</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://base_url/posts <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -733,10 +740,12 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:401 Unauthorized.</aside>
-<h1 id='user'>User</h1><h2 id='followers'>Followers</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+<h1 id='user'>User</h1><h2 id='followers'>Followers</h2>
+<p>This API is used for show the followers.</p>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://base_url/followers <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -798,10 +807,12 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:401 Unauthorized.</aside>
-<h2 id='following'>Following</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+<h2 id='following'>Following</h2>
+<p>This API is used for show the following.</p>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://base_url/following <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -818,7 +829,7 @@ with password.</p>
                </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
                </span><span class="s2">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IT"</span><span class="p">,</span><span class="w">
                </span><span class="s2">"age_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-30"</span><span class="p">,</span><span class="w">
-               </span><span class="s2">"dateing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"women"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"dateing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"women"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="p">,</span><span class="w">
@@ -863,10 +874,12 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:401 Unauthorized.</aside>
-<h2 id='follow'>Follow</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='follow'>Follow</h2>
+<p>This API is used for the follow the user.</p>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/user/:id/follow <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 
@@ -908,10 +921,12 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:422 Unprocessable entry.</aside>
-<h2 id='un-follow'>Un Follow</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/follow/ <span class="se">\</span>
+<h2 id='un-follow'>Un Follow</h2>
+<p>This API is used for the un follow the user.</p>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  http://base_url/user/:id/unfollow<span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -919,7 +934,7 @@ with password.</p>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user follow successfully "</span><span class="w"> 
+    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user un follow successfully "</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST http://base_url/user/:id/unfollow</code></p>
@@ -946,10 +961,12 @@ with password.</p>
 
 <aside class="warning">status:422 Unprocessable entry.</aside>
   
-<h2 id='block-user'>Block User</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://post/%20http:/base_url/user//block <span class="se">\</span>
+<h2 id='block-user'>Block User</h2>
+<p>This API is used the block the user.</p>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  http://post/%20http:/base_url/user/:id/block<span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -983,10 +1000,12 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:422 Unprocessable entry.</aside>
-<h2 id='user-unblock'>User Unblock</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='user-unblock'>User Unblock</h2>
+<p>This API is used for the unblock the user.</p>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://post/%20http:/base_url/user//unblock/ <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -1020,11 +1039,13 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:422 Unprocessable entry.</aside>
-<h2 id='report-user'>Report User</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='report-user'>Report User</h2>
+<p>This API is used for the report the user.</p>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/user//report <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -1032,7 +1053,7 @@ with password.</p>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user unblock successfully "</span><span class="w"> 
+    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user report successfully "</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST http://base_url/user/:id/report</code></p>
@@ -1058,11 +1079,13 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:422 Unprocessable entry.</aside>
-<h2 id='notification'>Notification</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='notification'>Notification</h2>
+<p>This API is used for the user notification. </p>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/user/notification <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -1096,11 +1119,13 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:401 Unauthorized.</aside>
-<h2 id='like-user'>Like User</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='like-user'>Like User</h2>
+<p>This API is used for the like the user.</p>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/user/:id/like <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -1108,7 +1133,7 @@ with password.</p>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"User notification get successfully"</span><span class="w"> 
+    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"User like successfully"</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
 <p><code>POST http://base_url/user/:id/like</code></p>
@@ -1134,11 +1159,13 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:422 Unprocessable entry.</aside>
-<h2 id='unlike-user'>Unlike User</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='unlike-user'>Unlike User</h2>
+<p>This API is used for unlike the user.</p>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/user/:id/unlike <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -1146,7 +1173,7 @@ with password.</p>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"User notification get successfully"</span><span class="w"> 
+    </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"User unlike successfully"</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
 <p>:
@@ -1173,10 +1200,12 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:422 Unprocessable entry.</aside>
-<h1 id='categories'>Categories</h1><h2 id='activities'>Activities</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+<h1 id='categories'>Categories</h1>
+<p>This API is used for the list of Activity categories.</p>
+<h2 id='activities'>Activities</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://base_url/activities <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
@@ -1220,10 +1249,12 @@ with password.</p>
 <aside class="success">status:200 OK</aside>
 
 <aside class="warning">status:401 Unauthorized.</aside>
-<h2 id='habits'>Habits</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+<h2 id='habits'>Habits</h2>
+<p>This API is used for the list of habit categories.</p>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://base_url/habits <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
 </code></pre>
