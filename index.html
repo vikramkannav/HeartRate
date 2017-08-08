@@ -403,7 +403,7 @@ with password.</p>
 <aside class="warning">422 Unprocessable entry.</aside>
 <h2 id='update-profile'>Update Profile</h2>
 <p>This API is used for the user update profile.</p>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
   http://base_url/users <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
@@ -702,12 +702,12 @@ with password.</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"posts "</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-            </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"post_decription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post_decription"</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"decription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post_decription"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"post_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"post_decription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post_decription"</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"decription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post_decription"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
  </span><span class="p">}</span><span class="w">
@@ -1083,7 +1083,7 @@ with password.</p>
 <aside class="warning">status:422 Unprocessable entry.</aside>
 <h2 id='notification'>Notification</h2>
 <p>This API is used for the user notification. </p>
-<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/users/:id/notification <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
@@ -1098,7 +1098,7 @@ with password.</p>
     </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"User notification get successfully"</span><span class="w"> 
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET http://base_url/users/:id/notification</code></p>
+<p><code>POST http://base_url/users/:id/notification</code></p>
 <h3 id='parameters-8'>Parameters</h3>
 <table><thead>
 <tr>
