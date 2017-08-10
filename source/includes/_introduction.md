@@ -1,16 +1,16 @@
 # Introduction 
 
-Welcome to the documentation for the Heart Beat API!
+Welcome to the documentation for the HeartRate API!
 
-HeartRate app is a platform on which user can see the the post of people those follow. 
-This document is defined the behaviour of the HeartRate application.
+HeartRate app is a platform on which user can see the post on people those follow. 
+This document is defines the behaviour of the HeartRate application.
 
-A user can get the system by provied his/her email id Or Face book application.
+A user can get the system by providing  his/her email id Or Facebook application.
 
-A user can follow and unfollow of other user.
+A user can follow or unfollow of another user.
 
-A user can visit other user profile.
+A user can visit another user profile.
 
-A user get notification if user post those he follow.
+A user gets notification if a user posts those he follow.
 
-A user can like like or unlike.
+A user can like or unlike.

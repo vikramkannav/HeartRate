@@ -2,7 +2,7 @@
 
 ## Followers
 
-This API is used for show the followers.
+This API is used to show the followers by the user.
 
 ```shell
 curl -X GET \
@@ -61,7 +61,7 @@ curl -X GET \
 
 ## Following
 
-This API is used for show the following.
+This API is used to show the following the user.
 
 ```shell
 curl -X GET \
@@ -119,7 +119,7 @@ curl -X GET \
 
 ##Follow
 
-This API is used for the follow the user.
+This API is used to follow by the user.
 
 ```shell
 curl -X POST \
@@ -152,11 +152,11 @@ curl -X POST \
               |         |            |            |
 
 <aside class="success">status:200 OK</aside>
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
 
 ##Un Follow
 
-This API is used for the un follow the user.
+This API is used to unfollow by the user.
 
 ```shell
 curl -X POST \
@@ -189,15 +189,15 @@ curl -X POST \
               |         |            |            |
   
 <aside class="success">status:200 OK</aside>
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
   
             
-##Block User
+##Block user
 
-This API is used the block the user.
+This API is used to block the user by using.
 
 ```shell
-curl -X POST \
+curl -X DELETE \
    http:/base_url/users/:id/block\
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
@@ -227,16 +227,15 @@ curl -X POST \
               |         |            |            |
  
 <aside class="success">status:200 OK</aside>
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
 
             
-##User Unblock
+##User unblock
 
-This API is used for the unblock the user.
+This API is used to unblock the user by using.
 
 ```shell
-curl -X POST \
-   http:/base_url/users/:id/unblock\
+curl -X DELETE \
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
   -H 'cache-control: no-cache' \
@@ -265,11 +264,11 @@ curl -X POST \
               |         |            |            |
             
 <aside class="success">status:200 OK</aside>
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
 
-##Report User
+##Report user
 
-This API is used for the report the user.
+This API is used to report the another user by using.
 
 ```shell
 curl -X POST \
@@ -308,8 +307,7 @@ curl -X POST \
 
 ## Notification
 
-This API is used for the user notification. 
-
+This API is used to, he/she gets the notification post by another user follow with him.
 ```shell
 curl -X POST \
   http://base_url/users/:id/notification\
@@ -342,12 +340,12 @@ curl -X POST \
               |         |            |            |
             
 <aside class="success">status:200 OK</aside>
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
 
 
-## Like User
+## Like user
 
-This API is used for the like the user.
+This API is used to like another user by him. 
 
 ```shell
 curl -X POST \
@@ -381,15 +379,15 @@ curl -X POST \
               |         |            |            |
             
 <aside class="success">status:200 OK</aside>
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
 
 
-## Unlike User
+## Unlike user
 
-This API is used for unlike the user.
+This API is used to unlike the other user by him.
 
 ```shell
-curl -X POST \
+curl -X DELETE \
   http://base_url/users/:id/unlike \
   -H 'accept: application/json' \
   -H 'accept: application/json' \
@@ -410,7 +408,7 @@ curl -X POST \
 
 ### HTTP Request
 :
-`POST http://base_url/users/:id/unlike`
+`DELETE http://base_url/users/:id/unlike`
 
 
 ### Parameters
@@ -420,4 +418,4 @@ curl -X POST \
               |         |            |            |
             
 <aside class="success">status:200 OK</aside>
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
