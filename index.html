@@ -225,13 +225,13 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#sign-up" class="toc-h2 toc-link" data-title="Authentication">Sign Up</a>
+                    <a href="#sign-up" class="toc-h2 toc-link" data-title="Authentication">Sign up</a>
                   </li>
                   <li>
-                    <a href="#update-profile" class="toc-h2 toc-link" data-title="Authentication">Update Profile</a>
+                    <a href="#sign-in" class="toc-h2 toc-link" data-title="Authentication">Sign in</a>
                   </li>
                   <li>
-                    <a href="#login" class="toc-h2 toc-link" data-title="Authentication">Login</a>
+                    <a href="#update-profile" class="toc-h2 toc-link" data-title="Authentication">Update profile</a>
                   </li>
                   <li>
                     <a href="#facebook-login" class="toc-h2 toc-link" data-title="Authentication">Facebook login</a>
@@ -265,22 +265,22 @@
                     <a href="#un-follow" class="toc-h2 toc-link" data-title="User">Un Follow</a>
                   </li>
                   <li>
-                    <a href="#block-user" class="toc-h2 toc-link" data-title="User">Block User</a>
+                    <a href="#block-user" class="toc-h2 toc-link" data-title="User">Block user</a>
                   </li>
                   <li>
-                    <a href="#user-unblock" class="toc-h2 toc-link" data-title="User">User Unblock</a>
+                    <a href="#user-unblock" class="toc-h2 toc-link" data-title="User">User unblock</a>
                   </li>
                   <li>
-                    <a href="#report-user" class="toc-h2 toc-link" data-title="User">Report User</a>
+                    <a href="#report-user" class="toc-h2 toc-link" data-title="User">Report user</a>
                   </li>
                   <li>
                     <a href="#notification" class="toc-h2 toc-link" data-title="User">Notification</a>
                   </li>
                   <li>
-                    <a href="#like-user" class="toc-h2 toc-link" data-title="User">Like User</a>
+                    <a href="#like-user" class="toc-h2 toc-link" data-title="User">Like user</a>
                   </li>
                   <li>
-                    <a href="#unlike-user" class="toc-h2 toc-link" data-title="User">Unlike User</a>
+                    <a href="#unlike-user" class="toc-h2 toc-link" data-title="User">Unlike user</a>
                   </li>
               </ul>
           </li>
@@ -308,33 +308,33 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the documentation for the Heart Beat API!</p>
+<p>Welcome to the documentation for the HeartRate API!</p>
 
-<p>HeartRate app is a platform on which user can see the the post of people those follow. 
-This document is defined the behaviour of the HeartRate application.</p>
+<p>HeartRate app is a platform on which user can see the post on people those follow. 
+This document is defines the behaviour of the HeartRate application.</p>
 
-<p>A user can get the system by provied his/her email id Or Face book application.</p>
+<p>A user can get the system by providing  his/her email id Or Facebook application.</p>
 
-<p>A user can follow and unfollow of other user.</p>
+<p>A user can follow or unfollow of another user.</p>
 
-<p>A user can visit other user profile.</p>
+<p>A user can visit another user profile.</p>
 
-<p>A user get notification if user post those he follow.</p>
+<p>A user gets notification if a user posts those he follow.</p>
 
-<p>A user can like like or unlike.</p>
-<h1 id='authentication'>Authentication</h1><h2 id='sign-up'>Sign Up</h2>
-<p>This API is used for the sign up with email user name,email id
+<p>A user can like or unlike.</p>
+<h1 id='authentication'>Authentication</h1><h2 id='sign-up'>Sign up</h2>
+<p>This API is used for the sign up with email,user name,email id
 with password.</p>
 
 <p>This is open API where auth token is not required to passed in the header.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/users/sign_up <span class="se">\</span>
+  http://base_url/user/sign_up <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{
     "user" :{
-         "user_name" :"vikram",
+         "name" :"vikram",
         "email": "vikramkanav",
         "password":"xyz",
       }
@@ -348,7 +348,7 @@ with password.</p>
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vikram"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"vikramkanav@gmail.com"</span><span class="w">
         </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"about_us"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"aboutus"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"age_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -365,7 +365,7 @@ with password.</p>
     </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please enter the valid email and password."</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
-<p><code>POST  http://base_url/users/sign_up</code></p>
+<p><code>POST  http://base_url/user/signup</code></p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
 <tr>
@@ -377,23 +377,23 @@ with password.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>user</td>
+<td>username</td>
 <td>string</td>
-<td>user_name of the user</td>
+<td>Name of the user</td>
 <td>true</td>
 <td></td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
-<td>email of the user</td>
+<td>Email address of the user</td>
 <td>true</td>
 <td></td>
 </tr>
 <tr>
 <td>password</td>
 <td>string</td>
-<td>password of the user</td>
+<td>Password of the user</td>
 <td>true</td>
 <td></td>
 </tr>
@@ -401,122 +401,11 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">422 Unprocessable entry.</aside>
-<h2 id='update-profile'>Update Profile</h2>
-<p>This API is used for the user update profile.</p>
-<pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://base_url/users <span class="se">\</span>
-  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-   -d <span class="s1">' {
-    "user ": {
-        "name": "vikram sharma",
-        "dob": "17/07/1984",
-        "about_us": "Text msg",
-        "gender": "Male",
-        "occupation": "IT",
-        "age_range": "20-30",
-        "date_with": "women"
-    }
- }'</span>
-
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"user "</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vikram"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17/07/1984"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"about_us"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text msg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IT"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"age_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-30"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date_with"</span><span class="p">:</span><span class="w"> </span><span class="s2">"women"</span><span class="p">,</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-          </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iYa1WQuk5_f9Fd04D_Qrrw"</span><span class="w">
-          </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AABB1234"</span><span class="w">
- </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this for failure:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please enter the valid format of date ."</span><span class="w">
- </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>PUT  http://base_url/users</code></p>
-<h3 id='parameters-2'>Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-<th>Default</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>name of the user</td>
-<td>true</td>
-<td></td>
-</tr>
-<tr>
-<td>dob</td>
-<td>date</td>
-<td>dob of the user</td>
-<td>true</td>
-<td></td>
-</tr>
-<tr>
-<td>about_us</td>
-<td>text</td>
-<td>about_us of the user</td>
-<td>true</td>
-<td></td>
-</tr>
-<tr>
-<td>gender</td>
-<td>string</td>
-<td>gender of the user</td>
-<td>true</td>
-<td></td>
-</tr>
-<tr>
-<td>occupation</td>
-<td>string</td>
-<td>occupation of the user</td>
-<td>true</td>
-<td></td>
-</tr>
-<tr>
-<td>age_range</td>
-<td>text</td>
-<td>age_range of the user</td>
-<td>true</td>
-<td></td>
-</tr>
-<tr>
-<td>dateing</td>
-<td>string</td>
-<td>dateing of the user</td>
-<td>true</td>
-<td></td>
-</tr>
-</tbody></table>
-
-<aside class="success">status:200 OK</aside>
-
-<aside class="warning">status:422 Unprocessable entry.</aside>
-     
-<h2 id='login'>Login</h2>
-<p>This API is used for the sign in.</p>
+<aside class="warning">422 Unprocessable Entity.</aside>
+<h2 id='sign-in'>Sign in</h2>
+<p>This API is used for user sign in with his/her email address and password.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/users/sign_in <span class="se">\</span>
+  http://base_url/signin <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -552,9 +441,9 @@ with password.</p>
 <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please enter the valid email id and password."</span><span class="w">
  </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST  http://base_url/users/sign_in</code></p>
-<h3 id='parameters-3'>Parameters</h3>
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST  http://base_url/signin</code></p>
+<h3 id='parameters-2'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -567,14 +456,14 @@ with password.</p>
 <tr>
 <td>email</td>
 <td>string</td>
-<td>email of the user</td>
+<td>Email of the user</td>
 <td>true</td>
 <td></td>
 </tr>
 <tr>
 <td>password</td>
 <td>string</td>
-<td>password of the user</td>
+<td>Password of the user</td>
 <td>true</td>
 <td></td>
 </tr>
@@ -582,11 +471,123 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
+<h2 id='update-profile'>Update profile</h2>
+<p>This API is used for the update to profile the profile by using.</p>
+<pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
+  http://base_url/user<span class="se">\</span>
+  -H <span class="s1">'accept: application/
+  json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Token token:AABB1234'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+   -d <span class="s1">' {
+    "user ": {
+        "name": "vikram sharma",
+        "dob": "17/07/1984",
+        "about": "Text msg",
+        "gender": "Male",
+        "occupation": "IT",
+        "age_range": "20-30",
+        "dating": "women"
+    }
+ }'</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"user "</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vikram"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17/07/1984"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text msg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"occupation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"age_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-30"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dating"</span><span class="p">:</span><span class="w"> </span><span class="s2">"women"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iYa1WQuk5_f9Fd04D_Qrrw"</span><span class="w">
+          </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AABB1234"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this for failure:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please enter the valid format of date ."</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>PUT  http://base_url/user</code></p>
+<h3 id='parameters-3'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name of the user</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>dob</td>
+<td>date</td>
+<td>Date of the birth of the user</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>about_us</td>
+<td>text</td>
+<td>About the user</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>gender</td>
+<td>string</td>
+<td>Gender of the user</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>occupation</td>
+<td>string</td>
+<td>Occupation of the user</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>age_range</td>
+<td>text</td>
+<td>Age range select by the user</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>dateing</td>
+<td>string</td>
+<td>Dating by the user</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<aside class="success">status:200 OK</aside>
+
+<aside class="warning">status:422 Unprocessable Entity.</aside>
+     
 <h2 id='facebook-login'>Facebook login</h2>
-<p>This API is used for the facebook sign in</p>
+<p>This API is used for the Facebook login with the help of his/her Facebook token.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/users/sign_up <span class="se">\</span>
+  http://base_url/signup <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -602,11 +603,11 @@ with password.</p>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
-   </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user login succfully"</span><span class="w"> 
+   </span><span class="s2">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"User login succfully"</span><span class="w"> 
  </span><span class="p">}</span><span class="w">
 
 </span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST  http://base_url/users/sign_up</code></p>
+<p><code>POST  http://base_url/signup</code></p>
 <h3 id='parameters-4'>Parameters</h3>
 <table><thead>
 <tr>
@@ -620,14 +621,14 @@ with password.</p>
 <tr>
 <td>facebook</td>
 <td>boolean</td>
-<td>facebook of the user</td>
+<td>Facebook of the user</td>
 <td>true</td>
 <td></td>
 </tr>
 <tr>
 <td>token</td>
 <td>string</td>
-<td>token of the user</td>
+<td>Token of the user</td>
 <td>true</td>
 <td></td>
 </tr>
@@ -635,9 +636,9 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">422 Unprocessable entry.</aside>
+<aside class="warning">422 Unprocessable Entity.</aside>
 <h2 id='retrieve-access-token'>Retrieve access Token</h2>
-<p>This API is used for the regenerating the auth token via refresh token. This API is an authentication API request in which needs to pass auth token in the request header.</p>
+<p>This API is used for the regeneration the Auth token via refresh token. This API is an authentication API request in which needs to pass Auth token in the request header.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/api/refresh_token <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
@@ -681,14 +682,14 @@ with password.</p>
 <td>refresh_token</td>
 <td>string</td>
 <td>true</td>
-<td>refresh_token of the user</td>
+<td>Refresh token of the user</td>
 <td></td>
 </tr>
 </tbody></table>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">422 Unprocessable entry.</aside>
+<aside class="warning">422 Unprocessable Entity.</aside>
 <h1 id='post'>Post</h1><h2 id='posts'>Posts</h2>
 <p>This is API is used for the user posts.</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
@@ -744,7 +745,7 @@ with password.</p>
 
 <aside class="warning">status:401 Unauthorized.</aside>
 <h1 id='user'>User</h1><h2 id='followers'>Followers</h2>
-<p>This API is used for show the followers.</p>
+<p>This API is used to show the followers by the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://base_url/followers <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
@@ -811,7 +812,7 @@ with password.</p>
 
 <aside class="warning">status:401 Unauthorized.</aside>
 <h2 id='following'>Following</h2>
-<p>This API is used for show the following.</p>
+<p>This API is used to show the following the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
   http://base_url/following <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
@@ -878,7 +879,7 @@ with password.</p>
 
 <aside class="warning">status:401 Unauthorized.</aside>
 <h2 id='follow'>Follow</h2>
-<p>This API is used for the follow the user.</p>
+<p>This API is used to follow by the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/users/:id/follow <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
@@ -923,9 +924,9 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
 <h2 id='un-follow'>Un Follow</h2>
-<p>This API is used for the un follow the user.</p>
+<p>This API is used to unfollow by the user.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/users/:id/unfollow<span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
@@ -962,11 +963,11 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
   
-<h2 id='block-user'>Block User</h2>
-<p>This API is used the block the user.</p>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<h2 id='block-user'>Block user</h2>
+<p>This API is used to block the user by using.</p>
+<pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
    http:/base_url/users/:id/block<span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
@@ -1002,10 +1003,10 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:422 Unprocessable entry.</aside>
-<h2 id='user-unblock'>User Unblock</h2>
-<p>This API is used for the unblock the user.</p>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
+<h2 id='user-unblock'>User unblock</h2>
+<p>This API is used to unblock the user by using.</p>
+<pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
@@ -1040,9 +1041,9 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:422 Unprocessable entry.</aside>
-<h2 id='report-user'>Report User</h2>
-<p>This API is used for the report the user.</p>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
+<h2 id='report-user'>Report user</h2>
+<p>This API is used to report the another user by using.</p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/users/:id/report <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
@@ -1082,15 +1083,17 @@ with password.</p>
 
 <aside class="warning">status:422 Unprocessable entry.</aside>
 <h2 id='notification'>Notification</h2>
-<p>This API is used for the user notification. </p>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://base_url/users/:id/notification<span class="se">\</span>
-  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'authorization: Token token:DDEJKRAS2356'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-</code></pre>
+<p>This API is used to, he/she gets the notification post by another user follow with him.
+<code>shell
+curl -X POST \
+  http://base_url/users/:id/notification\
+  -H &#39;accept: application/json&#39; \
+  -H &#39;accept: application/json&#39; \
+  -H &#39;authorization: Token token:DDEJKRAS2356&#39; \
+  -H &#39;cache-control: no-cache&#39; \
+  -H &#39;content-type: application/json&#39; \
+</code></p>
+
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -1120,9 +1123,9 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:422 Unprocessable entry.</aside>
-<h2 id='like-user'>Like User</h2>
-<p>This API is used for the like the user.</p>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
+<h2 id='like-user'>Like user</h2>
+<p>This API is used to like another user by him. </p>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   http://base_url/users/:id/like <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
@@ -1160,10 +1163,10 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:422 Unprocessable entry.</aside>
-<h2 id='unlike-user'>Unlike User</h2>
-<p>This API is used for unlike the user.</p>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
+<h2 id='unlike-user'>Unlike user</h2>
+<p>This API is used to unlike the other user by him.</p>
+<pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
   http://base_url/users/:id/unlike <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
@@ -1179,7 +1182,7 @@ with password.</p>
   </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
 <p>:
-<code>POST http://base_url/users/:id/unlike</code></p>
+<code>DELETE http://base_url/users/:id/unlike</code></p>
 <h3 id='parameters-10'>Parameters</h3>
 <table><thead>
 <tr>
@@ -1201,7 +1204,7 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:422 Unprocessable entry.</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
 <h1 id='categories'>Categories</h1>
 <p>This API is used for the list of Activity categories.</p>
 <h2 id='activities'>Activities</h2><pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
@@ -1250,7 +1253,7 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:401 Unauthorized.</aside>
+<aside class="warning">status:401 Unauthorized Entity.</aside>
 <h2 id='habits'>Habits</h2>
 <p>This API is used for the list of habit categories.</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
@@ -1299,7 +1302,7 @@ with password.</p>
 
 <aside class="success">status:200 OK</aside>
 
-<aside class="warning">status:401 Unauthorized.</aside>
+<aside class="warning">status:401 Unauthorized Entity.</aside>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
 
