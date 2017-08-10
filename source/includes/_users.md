@@ -1,5 +1,77 @@
 # User
 
+## Update profile
+
+This API is used for the update to profile the profile by using.
+ 
+```shell
+curl -X PUT \
+  http://base_url/users/:id\
+  -H 'accept: application/
+  json' \
+  -H 'authorization: Token token:AABB1234' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+   -d ' {
+ 	"user ": {
+ 		"name": "vikram sharma",
+ 		"dob": "17/07/1984",
+ 		"about": "Text msg",
+ 		"gender": "Male",
+ 		"occupation": "IT",
+ 		"age_range": "20-30",
+ 		"dating": "women"
+ 	}
+ }'
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+ {
+ 	"user ": {
+ 		"name": "vikram",
+ 		"dob": "17/07/1984",
+ 		"about": "Text msg",
+ 		"gender": "Male",
+ 		"occupation": "IT",
+ 		"age_range": "20-30",
+ 		"dating": "women"
+ 	},
+ 	"refresh_token": "iYa1WQuk5_f9Fd04D_Qrrw",
+ 	"auth_token": "AABB1234"
+ }
+```
+>The above command returns JSON structured like this for failure:
+
+```json
+ {
+ 	"error": "Please enter the valid format of date ."
+ }
+```
+
+### HTTP Request
+
+`PUT  http://base_url/users/:id`
+
+
+### Parameters
+
+    Parameter | Type | Description| Required | Default
+    --------- | ------- | -----------| -----------| -----------
+     name     | string  | Name of the user |true | 
+     dob      | date  | Date of the birth of the user |true | 
+     about_us | text  | About the user |true | 
+     gender   | string  | Gender of the user |true | 
+     occupation  | string | Occupation of the user |true | 
+     age_range   |text | Age range select by the user |true | 
+     dateing   | string  | Dating by the user |true | 
+
+<aside class="success">status:200 OK</aside>
+<aside class="warning">status:422 Unprocessable Entity.</aside>
+
+
 ## Followers
 
 This API is used to show the followers by the user.
@@ -17,7 +89,6 @@ curl -X GET \
 > The above command returns JSON structured like this:
 
 ```json
-
  {
  	"users ": [{
  			"user_id": "5",
@@ -61,7 +132,7 @@ curl -X GET \
 
 ## Following
 
-This API is used to show the following the user.
+This API is used to show the users those are following he/she.
 
 ```shell
 curl -X GET \
@@ -76,30 +147,29 @@ curl -X GET \
 > The above command returns JSON structured like this:
 
 ```json
-
   {
-    	"users ": [{
-    			"id": "4",
-    			"name": "Ram",
-               "dob": "17/07/1984",
-               "about_us": "Text msg",
-               "gender": "Male",
-               "occupation": "IT",
-               "age_range": "20-30",
-               "dateing": "women"
-           	},
-    		{
-    			"id": "9",
-    			"name": "Gyan",
-               "dob": "17/07/1984",
-               "about_us": "Text msg",
-               "gender": "Male",
-               "occupation": "IT",
-               "age_range": "20-30",
-               "dateing": "women"
-          	}
-    	]
-    }
+  	"users ": [{
+  			"id": "4",
+  			"name": "Ram",
+  			"dob": "17/07/1984",
+  			"about_us": "Text msg",
+  			"gender": "Male",
+  			"occupation": "IT",
+  			"age_range": "20-30",
+  			"dateing": "women"
+  		},
+  		{
+  			"id": "9",
+  			"name": "Gyan",
+  			"dob": "17/07/1984",
+  			"about_us": "Text msg",
+  			"gender": "Male",
+  			"occupation": "IT",
+  			"age_range": "20-30",
+  			"dateing": "women"
+  		}
+  	]
+  }
 ```
 
 
@@ -114,12 +184,15 @@ curl -X GET \
     --------- | ------- | -----------| -----------| -----------
               |         |            |            |
               |         |            |            |
+
 <aside class="success">status:200 OK</aside>
 <aside class="warning">status:401 Unauthorized.</aside>
 
 ##Follow
 
-This API is used to follow by the user.
+This API is used to follow the other user. 
+
+After follow the user he/she can see another user posts.
 
 ```shell
 curl -X POST \
@@ -156,10 +229,10 @@ curl -X POST \
 
 ##Un Follow
 
-This API is used to unfollow by the user.
+This API is used in un follow the other user those he/she follow.
 
 ```shell
-curl -X POST \
+curl -X DELETE \
   http://base_url/users/:id/unfollow\
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
@@ -179,7 +252,7 @@ curl -X POST \
 
 ### HTTP Request
 
-`POST http://base_url/users/:id/unfollow`
+`DELETE http://base_url/users/:id/unfollow`
 
 
 ### Parameters
@@ -197,7 +270,7 @@ curl -X POST \
 This API is used to block the user by using.
 
 ```shell
-curl -X DELETE \
+curl -X POST \
    http:/base_url/users/:id/block\
   -H 'accept: application/json' \
   -H 'authorization: Token token:DDEJKRAS2356' \
@@ -254,7 +327,7 @@ curl -X DELETE \
 
 ### HTTP Request
 
-`POST http://base_url/users/:id/unblock`
+`DELETE http://base_url/users/:id/unblock`
 
 
 ### Parameters
@@ -308,6 +381,7 @@ curl -X POST \
 ## Notification
 
 This API is used to, he/she gets the notification post by another user follow with him.
+
 ```shell
 curl -X POST \
   http://base_url/users/:id/notification\

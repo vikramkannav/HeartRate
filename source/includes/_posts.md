@@ -2,7 +2,8 @@
 
 ## Posts
 
-This is API is used for the user posts.
+This API is used for the posts those he follow or like users.
+With this API user can see the other users posts.
 
 ```shell
 curl -X GET \

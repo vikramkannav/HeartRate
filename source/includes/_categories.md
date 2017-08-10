@@ -1,8 +1,11 @@
 # Categories
 
-This API is used for the list of Activity categories.
+
 
 ## Activities
+
+This API is used to list of the activity list.
+
 
 ```shell
 curl -X GET \
@@ -27,7 +30,6 @@ curl -X GET \
 			"type": "bootcamp"
 		}
 	]
-
 }
 
 ```
@@ -49,7 +51,7 @@ curl -X GET \
 
 ## Habits
 
-This API is used for the list of habit categories.
+This API is used to list of habits.
 
 
 ```shell
@@ -75,9 +77,7 @@ curl -X GET \
 			"type": "Alcohol"
 		}
 	]
-
 }
-
 ```
 
 
